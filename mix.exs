@@ -1,7 +1,7 @@
 defmodule NervesSystemRpi.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi
+  @app :nerves_system_rpi_iio
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -35,7 +35,7 @@ defmodule NervesSystemRpi.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        {:github_releases, "hoffi/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -58,16 +58,16 @@ defmodule NervesSystemRpi.MixProject do
 
   defp description do
     """
-    Nerves System - Raspberry Pi A+ / B+ / B
+    Nerves System - Raspberry Pi A+ / B+ / B With IIO Support
     """
   end
 
   defp package do
     [
-      maintainers: ["Frank Hunleth", "Justin Schneck"],
+      maintainers: ["Stefan Hoffmann"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/hoffi/#{@app}"}
     ]
   end
 
